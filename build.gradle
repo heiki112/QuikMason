@@ -1,0 +1,58 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+apply from: 'dependencies.gradle'
+apply from: 'hsqldb.gradle'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+//Main class to execute when doing gradle run
+mainClassName = "com.quikmason.tomcat.StartTomcat"
+//Path where to create exploded war
+war.ext.explodedPath =  "$buildDir/exploded"
+
+//Additional parameters sent to Tomcat
+run.args = [
+  //Port
+  '8080',
+  //Application base path. Can also point to war
+  war.explodedPath
+]
+
+run.jvmArgs = [
+  '-Xdebug',
+  '-Xrunjdwp:server=y,transport=dt_socket,address=4000,suspend=n'
+  // Uncomment and set correct path if planning to use jrebel 
+  //,'-javaagent:/jrebel/jrebel.jar'
+]
+
+repositories {
+  mavenCentral()
+  flatDir { dirs 'lib' }
+}
+
+
+task explodedWar(type: Copy) {
+  into war.explodedPath
+  with war
+}
+
+war.dependsOn += explodedWar
+run.dependsOn += war
+
+task wrapper(type: Wrapper) { gradleVersion = '1.9' }
+
+
+//Gradle adds groovy libraries before gradle classpath
+eclipse.classpath.file{
+  whenMerged{ classpath ->
+      def projectRefs = classpath.entries.findAll{entry -> entry.kind =='con' && entry.path.startsWith('GROOVY_')}
+      //move the project references to the end of the list:
+      classpath.entries.removeAll(projectRefs)
+      classpath.entries.addAll(projectRefs)
+  }
+}
+

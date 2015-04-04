@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:jee="http://www.springframework.org/schema/jee" xmlns:security="http://www.springframework.org/schema/security"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+  <!-- Security -->
+  <security:http>
+    <security:intercept-url pattern="/landing" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/img/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/font/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/**" access="ROLE_USER" />
+    <security:form-login login-page="/landing" default-target-url="/main" authentication-failure-url="/login?error=1"
+      always-use-default-target="true" />
+    <security:logout logout-url="/logout" logout-success-url="/login" />
+  </security:http>
+
+  <security:authentication-manager>
+    <security:authentication-provider user-service-ref="userDetailsService" />
+  </security:authentication-manager>
+
+</beans>

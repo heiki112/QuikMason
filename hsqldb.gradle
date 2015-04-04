@@ -1,0 +1,47 @@
+/** HSQLDB related build file */
+
+configurations{
+  database{ repositories { mavenCentral()
+    } }
+}
+
+dependencies{ database 'org.hsqldb:hsqldb:2.3.1' }
+
+//Use Ant properties because more of the logic will be in ant script
+ant.dbPort = '9001'
+ant.dbUrl = 'jdbc:hsqldb:hsql://localhost:'+ant.dbPort+'/'
+ant.dbDriver = 'org.hsqldb.jdbcDriver'
+ant.dbUser = 'sa'
+ant.dbPassword = ''
+
+ant.path(id:'hsqldb.class.path', path:configurations.database.asPath)
+
+ant.importBuild 'hsqldb-build.xml'
+
+task startDb << {
+  def exit = javaexec{
+    classpath configurations.database.asPath
+    setMain "org.hsqldb.Server"
+    args '-port'
+    args ant.dbPort
+    args '-database.0'
+    args 'file:db/app'
+    args '-dbname.0'
+  }
+  println "return value: ${exit.exitValue}"
+}
+
+startDb.description="Run HSQLDB database server on port "+ant.dbPort+". Database will be created to dir: "+file('db')
+
+task startDbManager << {
+  def exit = javaexec{
+    classpath configurations.database.asPath
+    setMain "org.hsqldb.util.DatabaseManagerSwing"
+    args '-url'
+    args ant.dbUrl
+    args '-driver'
+    args ant.dbDriver
+  }
+  println "return value: ${exit.exitValue}"
+}
+startDbManager.description="Start graphical DB Manager tool"

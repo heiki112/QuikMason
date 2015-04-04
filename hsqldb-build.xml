@@ -1,0 +1,39 @@
+<project name="testassignment-hsqldb-operations">
+
+	<!-- Define properties here to easily use them later. 
+	In real execution these values come from hsqldb.gradle -->
+	<property name="dbPort" value="" />
+	<property name="dbUser" value="" />
+	<property name="dbPassword" value="" />
+	<property name="dbDriver" value="" />
+	<property name="dbUrl" value="" />
+
+	<!-- HSQLDB -->
+	
+	<target name="create-schema" description="Creates the database schema objects (tables etc).">
+		<sql classpathref="hsqldb.class.path" driver="${dbDriver}" url="${dbUrl}" userid="${dbUser}" password="" src="db/schema.sql">
+		</sql>
+	</target>
+
+	<target name="create-test-data" description="Inserts test data to database.">
+		<sql classpathref="hsqldb.class.path" driver="${dbDriver}" url="${dbUrl}" userid="${dbUser}" password="" src="db/test-data.sql">
+		</sql>
+	</target>
+
+	<target name="create-schema-and-test-data" depends="create-schema, create-test-data" description="Creates the database schema objects and inserts test data." />
+
+	<target name="drop-schema" description="Deletes database schema objects.">
+		<sql classpathref="hsqldb.class.path" driver="${dbDriver}" url="${dbUrl}" userid="${dbUser}" password="" src="db/drop-schema.sql">
+		</sql>
+	</target>
+
+	<target name="stopDb" description="Stops the embedded database server.">
+		<echo message="Stopping HSQLDB" />
+
+		<sql classpathref="hsqldb.class.path" driver="${dbDriver}" url="${dbUrl}" userid="${dbUser}" password="${dbPassword}">
+			SHUTDOWN
+		</sql>
+	</target>
+
+
+</project>

@@ -1,0 +1,139 @@
+.navbar-brand {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 138px;
+  background: url('../img/logo.png') no-repeat center center transparent;
+}
+
+.btn-transparent {
+  background: transparent;
+}
+
+.btn-transparent:hover {
+  color: #000;
+}
+
+.ui-select-multiple.ui-select-bootstrap {
+  padding: 3px;
+}
+
+.ui-select-multiple.ui-select-bootstrap .ui-select-match-item {
+  margin: 2px 3px 1px 0;
+}
+
+.ui-select-multiple.ui-select-bootstrap .ui-select-match .close {
+  line-height: 0.95;
+}
+
+footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 100px;
+  color: #767676;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Override any other styles here */
+section {
+	margin-top: 10px;
+}
+
+/* Chevrons */
+.bs-docs-sidenav .icon-chevron-right {
+	float: right;
+	margin-top: 2px;
+	margin-right: -6px;
+	opacity: .25;
+}
+
+.bs-docs-sidenav>li>a:hover {
+	background-color: #999999;
+	text-shadow: none;
+	color: white;
+}
+
+.image-overlay {
+	display: none;
+	position: absolute;
+	background-color: rgba(50, 50, 50, 0.6);
+	top: 0px;
+	left: 0px;
+	width: 0px;
+	height: 0px;
+}
+
+.image-overlay-text {
+	color: white;
+	text-align: center;
+}
+
+/* Footer */
+html,body {
+	height: 100%;
+}
+
+#main-container {
+	min-height: 100%;
+}
+
+#footer {
+	height: 100px;
+}
+
+/* Errors */
+.error {
+	color: #b94a48;
+}
+
+.modal.fade.in {
+	top: 5%;
+}
+
+.gridStyle {
+	border: 1px solid rgb(212, 212, 212);
+	height: 400px;
+}
+
+.css-form input.ng-invalid.ng-dirty {
+	background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-dirty {
+	background-color: #78FA89;
+}

@@ -1,0 +1,33 @@
+/** Dependencies needed for application */
+
+dependencies {
+  compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.+'
+  compile group: 'commons-io', name: 'commons-io', version: '2.+'
+  compile group: 'commons-configuration', name: 'commons-configuration', version: '1.+'
+  compile 'org.springframework:spring-webmvc:3.2.5.RELEASE'
+  compile 'org.springframework:spring-jdbc:3.2.5.RELEASE'
+  compile 'org.springframework.security:spring-security-web:3.1.4.RELEASE'
+  compile 'org.springframework.security:spring-security-config:3.1.4.RELEASE'
+  compile 'org.codehaus.jackson:jackson-core-asl:1.9.12'
+  compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.12'
+  compile 'org.slf4j:slf4j-api:1.7.5'
+  compile 'org.slf4j:slf4j-log4j12:1.7.5'
+  compile 'log4j:log4j:1.2.17'
+  compile 'org.hsqldb:hsqldb:2.3.1'
+  compile 'com.opencsv:opencsv:3.3'
+  
+  compile fileTree(dir: 'libs', include: '*.jar')
+            
+  compile 'javax.servlet:jstl:1.2'
+  compile 'javax.servlet:javax.servlet-api:3.0.1'
+
+  //Tomcat dependencies need to be removed when deploying to external container
+  //TODO: These could also be defined under separate context but gradle run has to keep working
+  compile 'org.apache.tomcat:tomcat-catalina:7.0.47'
+  compile 'org.apache.tomcat.embed:tomcat-embed-core:7.0.47'
+  compile 'org.apache.tomcat:tomcat-jasper:7.0.47'
+  compile 'org.apache.tomcat:tomcat-jdbc:7.0.47'
+
+  //Test dependencies
+  testCompile group: 'junit', name: 'junit', version: '4.+'
+}

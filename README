@@ -1,0 +1,8 @@
+1. Install Gradle, Gradle plugin for eclipse.
+2. Import project from github.
+3. Run gradle tasks with ctrl+alt+shift+R:
+	startDb - starts the database
+	run - starts up project
+
+Access at localhost:8080
+Test username/password - test/qwerty (no sign-up yet)
