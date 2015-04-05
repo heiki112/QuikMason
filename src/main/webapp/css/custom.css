@@ -1,3 +1,15 @@
+.landing {
+	padding-top: 4%;
+}
+
+.topright {
+  position:absolute;
+  width:200px; 
+  height:300px;
+  top:2%;
+  right:2%;
+}
+
 .navbar-brand {
   text-indent: -999px;
   overflow: hidden;

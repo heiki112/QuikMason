@@ -15,12 +15,19 @@
   <link href="${baseUrl}/css/font-awesome.min.css" rel="stylesheet">
   <link href="${baseUrl}/css/custom.css" rel="stylesheet">
 </head>
-<body class="page-login">
+<body class="landing">
   <div class="container">
-    <div class="col-md-12">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/y6120QOlsfU" frameborder="0" allowfullscreen></iframe>
+    <div style="display:block;">
+        <iframe width="480" height="272" src="http://www.powtoon.com/embed/b39w89zTNGX/" frameborder="0"></iframe>
     </div>
-    <a href="login">Login</a>
+    <div class="topRight">
+    	<div>
+    		<a href="login">Sign in</a>
+    	</div>
+    	<div>
+    		<a href="#">Sign Up #TODO</a>
+    	</div>
+    </div>
   </div>
 </body>
 </html>
