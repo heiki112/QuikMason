@@ -1,10 +1,10 @@
 <%@ include file="init.jsp"%>
 
-<nrtl:pageTemplate>
+<qm:pageTemplate>
 
-  <nrtl:header>
+  <qm:header>
     <h1>Main</h1>
-  </nrtl:header>
+  </qm:header>
 
   <div class="row">
     <div class="col-md-12">
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-</nrtl:pageTemplate>
+</qm:pageTemplate>
 
 
 

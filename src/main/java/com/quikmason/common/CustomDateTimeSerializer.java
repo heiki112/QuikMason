@@ -11,11 +11,11 @@ import java.util.Date;
 
 public class CustomDateTimeSerializer extends JsonSerializer<Date> {
 
-  public static SimpleDateFormat FORMATTER = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+	public static SimpleDateFormat FORMATTER = new SimpleDateFormat("dd.MM.yyyy HH:mm");
 
-  @Override
-  public void serialize(Date value, JsonGenerator gen, SerializerProvider arg2) throws IOException, JsonProcessingException {
-    gen.writeString(FORMATTER.format(value));
-  }
+	@Override
+	public void serialize(Date value, JsonGenerator gen, SerializerProvider arg2) throws IOException, JsonProcessingException {
+		gen.writeString(FORMATTER.format(value));
+	}
 
 }

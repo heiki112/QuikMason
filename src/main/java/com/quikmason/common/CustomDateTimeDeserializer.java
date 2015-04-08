@@ -12,14 +12,14 @@ import java.util.Date;
 
 public class CustomDateTimeDeserializer extends JsonDeserializer<Date> {
 
-  public static SimpleDateFormat FORMATTER = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+	public static SimpleDateFormat FORMATTER = new SimpleDateFormat("dd.MM.yyyy HH:mm");
 
-  @Override
-  public Date deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-    try {
-      return FORMATTER.parse(jp.getText());
-    } catch (ParseException e) {
-      throw new RuntimeException(e);
-    }
-  }
+	@Override
+	public Date deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+		try {
+			return FORMATTER.parse(jp.getText());
+		} catch (ParseException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

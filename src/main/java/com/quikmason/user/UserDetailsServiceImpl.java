@@ -12,18 +12,18 @@ import org.springframework.stereotype.Service;
  */
 @Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
-	
+
 	@Resource
 	private UserService userService;
-	
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userService.loadUserByUsername(username);
-		
+
 		if (user == null) {
 			throw new UsernameNotFoundException("Not found");
 		}
-		
+
 		return new UserPrincipal(user);
 	}
 

@@ -15,23 +15,23 @@ import org.springframework.web.servlet.DispatcherServlet;
  */
 public class SpringInit implements WebApplicationInitializer {
 
-  @Override
-  public void onStartup(ServletContext container) {
+	@Override
+	public void onStartup(ServletContext container) {
 
-    // Create the 'root' Spring application context
-    AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-    rootContext.register(DispatcherConfig.class);
+		// Create the 'root' Spring application context
+		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
+		rootContext.register(DispatcherConfig.class);
 
-    // Manage the lifecycle of the root application context
-    container.addListener(new ContextLoaderListener(rootContext));
+		// Manage the lifecycle of the root application context
+		container.addListener(new ContextLoaderListener(rootContext));
 
-    FilterRegistration.Dynamic springSecurity = container.addFilter("springSecurityFilterChain", new DelegatingFilterProxy());
-    springSecurity.addMappingForUrlPatterns(null, true, "/*");
+		FilterRegistration.Dynamic springSecurity = container.addFilter("springSecurityFilterChain", new DelegatingFilterProxy());
+		springSecurity.addMappingForUrlPatterns(null, true, "/*");
 
-    // Register and map the dispatcher servlet
-    ServletRegistration.Dynamic dispatcher = container.addServlet("dispatcher", new DispatcherServlet(rootContext));
-    dispatcher.setLoadOnStartup(1);
-    dispatcher.addMapping("/");
+		// Register and map the dispatcher servlet
+		ServletRegistration.Dynamic dispatcher = container.addServlet("dispatcher", new DispatcherServlet(rootContext));
+		dispatcher.setLoadOnStartup(1);
+		dispatcher.addMapping("/");
 
-  }
+	}
 }

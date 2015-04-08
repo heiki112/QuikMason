@@ -43,9 +43,9 @@
 </head>
 
 <body style="padding-left:5%">
-  <nrtl:header>
+  <qm:header>
     <h1>Sign up</h1>
-  </nrtl:header>
+  </qm:header>
 
   <div ng-controller="UserController">
 

@@ -14,21 +14,22 @@ import org.springframework.web.context.request.WebRequest;
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
-  
-  @Resource
-  private UserService userservice;
-  
-  private static Logger logger = Logger.getLogger(UserController.class);
-	
+
+	@Resource
+	private UserService userservice;
+
+	private static Logger logger = Logger.getLogger(UserController.class);
+
 	@RequestMapping(value = "registration", method = RequestMethod.GET)
 	public String showRegistrationForm(WebRequest request, Model model) {
-	    User user = new User();
-	    model.addAttribute("user", user);
-	    return "registration";
+		User user = new User();
+		model.addAttribute("user", user);
+		return "registration";
 	}
-	
+
 	@RequestMapping(value = "save", method = RequestMethod.POST)
-  public void saveUser(@RequestBody final User user) {
-	  userservice.save(user);
-  }
+	public void saveUser(@RequestBody final User user) {
+		logger.warn(user.getFirstName() + " " + user.getLastName() + " " + user.getId());
+		userservice.save(user);
+	}
 }

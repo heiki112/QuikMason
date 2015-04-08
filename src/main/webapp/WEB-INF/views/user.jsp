@@ -1,12 +1,12 @@
 <%@ include file="init.jsp"%>
-<nrtl:pageTemplate>
+<qm:pageTemplate>
 
-  <nrtl:header>
+  <qm:header>
     <h1>My page</h1>
-  </nrtl:header>
+  </qm:header>
 
   #TODO
 
-</nrtl:pageTemplate>
+</qm:pageTemplate>
 
 

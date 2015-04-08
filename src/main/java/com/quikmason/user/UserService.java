@@ -5,21 +5,21 @@ package com.quikmason.user;
  */
 public interface UserService {
 
-  /**
-   * Gets user by username
-   * 
-   * @param username Username
-   * @return User or null if none found
-   */
-  User loadUserByUsername(String username);
+	/**
+	 * Gets user by username
+	 * 
+	 * @param username Username
+	 * @return User or null if none found
+	 */
+	User loadUserByUsername(String username);
 
-  /**
-   * Updates information about given user
-   * 
-   * @param user User. Must not be null
-   */
-  void updateUser(User user);
+	/**
+	 * Updates information about given user
+	 * 
+	 * @param user User. Must not be null
+	 */
+	void updateUser(User user);
 
-  void save(User user);
+	void save(User user);
 
 }

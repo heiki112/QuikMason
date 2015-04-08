@@ -13,31 +13,31 @@ import org.apache.log4j.Logger;
  */
 public class StartTomcat {
 
-  private static final Logger logger = Logger.getLogger(StartTomcat.class);
+	private static final Logger logger = Logger.getLogger(StartTomcat.class);
 
-  public static void main(String[] args) throws Exception {
-    Integer port = Integer.valueOf(args[0]);
-    String appBase = args[1];
+	public static void main(String[] args) throws Exception {
+		Integer port = Integer.valueOf(args[0]);
+		String appBase = args[1];
 
-    logger.log(Level.INFO, ("Starting Tomcat with application base: " + appBase));
-    Tomcat tomcat = new Tomcat();
-    tomcat.setPort(port);
+		logger.log(Level.INFO, ("Starting Tomcat with application base: " + appBase));
+		Tomcat tomcat = new Tomcat();
+		tomcat.setPort(port);
 
-    tomcat.setBaseDir(".");
+		tomcat.setBaseDir(".");
 
-    // Add AprLifecycleListener
-    StandardServer server = (StandardServer) tomcat.getServer();
-    AprLifecycleListener listener = new AprLifecycleListener();
+		// Add AprLifecycleListener
+		StandardServer server = (StandardServer) tomcat.getServer();
+		AprLifecycleListener listener = new AprLifecycleListener();
 
-    server.addLifecycleListener(listener);
+		server.addLifecycleListener(listener);
 
-    String contextPath = "/";
-    String appBaseAbsolutePath = new File(appBase).getAbsolutePath();
-    tomcat.addWebapp(contextPath, appBaseAbsolutePath);
+		String contextPath = "/";
+		String appBaseAbsolutePath = new File(appBase).getAbsolutePath();
+		tomcat.addWebapp(contextPath, appBaseAbsolutePath);
 
-    tomcat.start();
-    tomcat.getServer().await();
+		tomcat.start();
+		tomcat.getServer().await();
 
-  }
+	}
 
 }

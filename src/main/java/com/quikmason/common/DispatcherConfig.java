@@ -34,47 +34,47 @@ import org.springframework.web.servlet.view.json.MappingJacksonJsonView;
 @ComponentScan(basePackages = "com.quikmason")
 public class DispatcherConfig extends WebMvcConfigurerAdapter {
 
-  public static final String[] RESOURCE_LOCATIONS = new String[] { "/css/", "/img/", "/js/", "/font/" };
-  public static final String[] RESOURCE_HANDLERS = new String[] { "/css/**", "/img/**", "/js/**", "/font/**" };
+	public static final String[] RESOURCE_LOCATIONS = new String[] { "/css/", "/img/", "/js/", "/font/" };
+	public static final String[] RESOURCE_HANDLERS = new String[] { "/css/**", "/img/**", "/js/**", "/font/**" };
 
-  @Bean
-  public ContentNegotiatingViewResolver jspResolver() {
+	@Bean
+	public ContentNegotiatingViewResolver jspResolver() {
 
-    MappingJacksonJsonView defaultView = new MappingJacksonJsonView();
-    defaultView.setExtractValueFromSingleKeyModel(true);
+		MappingJacksonJsonView defaultView = new MappingJacksonJsonView();
+		defaultView.setExtractValueFromSingleKeyModel(true);
 
-    InternalResourceViewResolver jspViewResolver = new InternalResourceViewResolver();
-    jspViewResolver.setViewClass(JstlView.class);
-    jspViewResolver.setPrefix("/WEB-INF/views/");
-    jspViewResolver.setSuffix(".jsp");
+		InternalResourceViewResolver jspViewResolver = new InternalResourceViewResolver();
+		jspViewResolver.setViewClass(JstlView.class);
+		jspViewResolver.setPrefix("/WEB-INF/views/");
+		jspViewResolver.setSuffix(".jsp");
 
-    ContentNegotiatingViewResolver contentViewResolver = new ContentNegotiatingViewResolver();
+		ContentNegotiatingViewResolver contentViewResolver = new ContentNegotiatingViewResolver();
 
-    ContentNegotiationManagerFactoryBean contentNegotiationManager = new ContentNegotiationManagerFactoryBean();
-    contentNegotiationManager.addMediaType("json", MediaType.APPLICATION_JSON);
-    contentViewResolver.setContentNegotiationManager(contentNegotiationManager.getObject());
+		ContentNegotiationManagerFactoryBean contentNegotiationManager = new ContentNegotiationManagerFactoryBean();
+		contentNegotiationManager.addMediaType("json", MediaType.APPLICATION_JSON);
+		contentViewResolver.setContentNegotiationManager(contentNegotiationManager.getObject());
 
-    contentViewResolver.setDefaultViews(Arrays.<View> asList(new MappingJacksonJsonView()));
-    contentViewResolver.setViewResolvers(Arrays.<ViewResolver> asList(jspViewResolver));
-    contentViewResolver.setDefaultViews(Arrays.<View> asList(defaultView));
+		contentViewResolver.setDefaultViews(Arrays.<View> asList(new MappingJacksonJsonView()));
+		contentViewResolver.setViewResolvers(Arrays.<ViewResolver> asList(jspViewResolver));
+		contentViewResolver.setDefaultViews(Arrays.<View> asList(defaultView));
 
-    return contentViewResolver;
-  }
+		return contentViewResolver;
+	}
 
-  @Override
-  public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    registry.addResourceHandler(RESOURCE_HANDLERS).addResourceLocations(RESOURCE_LOCATIONS);
-  }
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler(RESOURCE_HANDLERS).addResourceLocations(RESOURCE_LOCATIONS);
+	}
 
-  @Override
-  public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-    converters.add(new ByteArrayHttpMessageConverter());
-    MappingJacksonHttpMessageConverter messageConverter = new MappingJacksonHttpMessageConverter();
-    ObjectMapper objectMapper = messageConverter.getObjectMapper();
-    objectMapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    objectMapper.configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false);
-    objectMapper.setDateFormat(CustomDateSerializer.FORMATTER);
-    converters.add(messageConverter);
-  }
+	@Override
+	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+		converters.add(new ByteArrayHttpMessageConverter());
+		MappingJacksonHttpMessageConverter messageConverter = new MappingJacksonHttpMessageConverter();
+		ObjectMapper objectMapper = messageConverter.getObjectMapper();
+		objectMapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		objectMapper.configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false);
+		objectMapper.setDateFormat(CustomDateSerializer.FORMATTER);
+		converters.add(messageConverter);
+	}
 
 }
