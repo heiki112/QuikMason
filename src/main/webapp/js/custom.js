@@ -18,5 +18,10 @@ app
                   $scope.form.$setPristine();*/
                 });
             };
+            
+            $scope.clear = function() {
+            	$scope.user = {};
+            	$scope.form.$setPristine();
+            };
         	
         });

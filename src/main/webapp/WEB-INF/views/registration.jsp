@@ -42,7 +42,7 @@
 
 </head>
 
-<body>
+<body style="padding-left:5%">
   <nrtl:header>
     <h1>Sign up</h1>
   </nrtl:header>
@@ -72,9 +72,10 @@
           <input type="text" class="form-control" id="email" ng-model="user.email" required />
         </div>
 
-        <button ng-click="save(user)" class="btn btn-primary">SAVE</button>
-        <button ng-click="clear()" class="btn btn-danger">CLEAR</button>
+        <button ng-click="save(user)" class="btn btn-primary">Save</button>
+        <button ng-click="clear()" class="btn btn-danger">Clear</button>
         
+        <a href="landing" class="btn btn-primary">Back</a>
       </form>
     </div>
   </div>

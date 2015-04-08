@@ -18,14 +18,14 @@
 <body class="landing">
   <div class="container">
     <div style="display:block;">
-        <iframe width="480" height="272" src="http://www.powtoon.com/embed/b39w89zTNGX/" frameborder="0"></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UthnQjpKmvM" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="topRight">
     	<div>
     		<a href="login">Sign in</a>
     	</div>
     	<div>
-    		<a href="user/registration">Sign Up #TODO</a>
+    		<a href="user/registration">Sign Up</a>
     	</div>
     </div>
   </div>

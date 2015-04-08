@@ -1,2 +1,2 @@
-INSERT INTO user (id, username, password, first_name, last_name) 
-	VALUES ('1', 'test', 'qwerty', 'John', 'Doe');
+INSERT INTO user (username, password, first_name, last_name) 
+	VALUES ('test', 'qwerty', 'John', 'Doe');

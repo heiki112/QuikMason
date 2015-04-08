@@ -27,10 +27,8 @@
       <label for="j_password" class="sr-only">Password</label>
       <input type="password" id="j_password" name="j_password" class="form-control" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <a class="btn btn-lg btn-primary btn-block" href="user/registration">Sign up</a>
     </form>
-    <div>
-    	<a href="signup">Sign Up #TODO</a>
-    </div>
   </div>
 </body>
 </html>

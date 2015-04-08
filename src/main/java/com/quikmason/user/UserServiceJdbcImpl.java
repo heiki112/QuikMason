@@ -40,7 +40,7 @@ public class UserServiceJdbcImpl implements UserService {
     public User mapRow(ResultSet rs, int rowNum) throws SQLException {
       User user = new User();
       
-      user.setId(rs.getInt("id"));
+      user.setId(rs.getLong("id"));
       user.setUsername(rs.getString("username"));
       user.setPassword(rs.getString("password"));
       user.setFirstName(rs.getString("first_name"));
@@ -60,15 +60,16 @@ public class UserServiceJdbcImpl implements UserService {
     args.add(user.getFirstName());
     args.add(user.getLastName());
     args.add(user.getEmail());
-
-    if (Integer.valueOf(user.getId()) == null) {
+    
+    logger.warn(user.getFirstName() + " " + user.getLastName() + " " + user.getId());
+    /*if (Long.valueOf(user.getId()) == null) {
       sql = "insert into user (username, password, first_name, last_name, email) values (?,?,?,?,?)";
     } else {
       sql = "update user set username=?, password=?, first_name=?, last_name=?, email=? where id= ?";
       args.add(user.getId());
     }
-    logger.warn(user.getFirstName());
-    jdbcTemplate.update(sql, args.toArray());
+    
+    jdbcTemplate.update(sql, args.toArray());*/
   }
 
   @Override
