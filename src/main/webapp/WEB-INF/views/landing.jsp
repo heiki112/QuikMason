@@ -25,7 +25,7 @@
     		<a href="login">Sign in</a>
     	</div>
     	<div>
-    		<a href="#">Sign Up #TODO</a>
+    		<a href="user/registration">Sign Up #TODO</a>
     	</div>
     </div>
   </div>

@@ -10,6 +10,8 @@
   <!-- Security -->
   <security:http>
     <security:intercept-url pattern="/landing" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/user/registration" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/user/save" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />

@@ -28,6 +28,9 @@
       <input type="password" id="j_password" name="j_password" class="form-control" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
+    <div>
+    	<a href="signup">Sign Up #TODO</a>
+    </div>
   </div>
 </body>
 </html>

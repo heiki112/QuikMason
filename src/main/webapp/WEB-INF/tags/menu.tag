@@ -23,8 +23,8 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right" id="user-actions">
-          <s:eval expression="T(com.quikmason.user.UserUtil).getCurrentUser().getName()" var="fullName" />
-          <li><a href="#" style="text-transform: none; font-size: 12px;">(${fullName})</a></li>
+          <s:eval expression="T(com.quikmason.user.UserUtil).getCurrentUser().getFirstName()" var="firstName" />
+          <li><a href="#" style="text-transform: none; font-size: 12px;">(${firstName})</a></li>
           <li><a href="/logout" style="text-transform: none;">Log out </a></li>
         </ul>
       </div>
