@@ -11,7 +11,7 @@ app
                   contentType : 'application/json',
                   dataType : 'json'
                 }).then(function(res) {
-                	console.log(user);
+                	console.log(JSON.stringify(user));
                   /*$scope.loadData();
                   // reset form
                   $scope.employee = {};

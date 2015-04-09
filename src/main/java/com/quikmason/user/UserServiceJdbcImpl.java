@@ -62,14 +62,14 @@ public class UserServiceJdbcImpl implements UserService {
 		args.add(user.getEmail());
 
 
-		/*if (Long.valueOf(user.getId()) == null) {
+		if (user.getId() == null) {
       sql = "insert into user (username, password, first_name, last_name, email) values (?,?,?,?,?)";
     } else {
       sql = "update user set username=?, password=?, first_name=?, last_name=?, email=? where id= ?";
       args.add(user.getId());
     }
 
-    jdbcTemplate.update(sql, args.toArray());*/
+    jdbcTemplate.update(sql, args.toArray());
 	}
 
 	@Override

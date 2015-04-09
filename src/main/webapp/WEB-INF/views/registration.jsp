@@ -61,11 +61,11 @@
         </div>
         <div class="form-group">
           <label for="first_name">First name:</label>
-          <input type="text" class="form-control" id=first_name ng-model="user.first_name" required />
+          <input type="text" class="form-control" id=first_name ng-model="user.firstName" required />
         </div>
         <div class="form-group">
           <label for="last_name">Last name:</label>
-          <input type="text" class="form-control" id="last_name" ng-model="user.last_name" required />
+          <input type="text" class="form-control" id="last_name" ng-model="user.lastName" required />
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
