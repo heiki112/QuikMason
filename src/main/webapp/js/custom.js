@@ -32,7 +32,7 @@ app
     .controller(
         'OfferController',
         function($scope, $http) {
-        
+        $scope.mySelections = [];
         $scope.loadData = function() {
             $http.get('/offer/data.json').then(function(res) {
               console.log(res.data);
@@ -91,17 +91,12 @@ app
             $scope.gridOptions = {
             data : 'offers',
             columnDefs : $scope.makeColDefs(),
+            selectedItems: $scope.mySelections,
             multiSelect : false,
-            afterSelectionChange : function(rowItem, event) {
-              if (rowItem.selected) {
-                console.log(rowItem.entity);
-                // reset form
-                $scope.offer = {};
-                $scope.form.$setPristine();
-                // set new value
-                $scope.offer = angular.copy(rowItem.entity);
-              }
-            }
+            filterOptions: {filterText: '', useExternalFilter: false},
+   			showFilter: true,
+            
+             
           };
         	
         	$scope.save = function(offer) {
