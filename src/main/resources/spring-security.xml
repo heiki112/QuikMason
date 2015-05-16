@@ -21,7 +21,7 @@
     <security:intercept-url pattern="/**" access="ROLE_USER" />
     <security:form-login login-page="/login" default-target-url="/main" authentication-failure-url="/login?error=1"
       always-use-default-target="true" />
-    <security:logout logout-url="/logout" logout-success-url="/login" />
+    <security:logout logout-url="/logout" logout-success-url="/" />
   </security:http>
 
   <security:authentication-manager>
