@@ -7,7 +7,7 @@
 
 <body class="preview" id="top">
 
-    <qm:menu_session />
+    <qm:menu_landing />
 
     <div id="content" class="container">
         <jsp:doBody />
@@ -16,7 +16,7 @@
     <footer class="bs-docs-footer">
         <div class="container">
             <p class="pull-right">
-                <a href="#top">Back to top</a>
+                <a href="#top">Back to top2</a>
             </p>
         </div>
     </footer>
