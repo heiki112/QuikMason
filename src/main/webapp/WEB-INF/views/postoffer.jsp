@@ -1,7 +1,7 @@
 <%@ include file="init.jsp"%>
 <html ng-app="app">
 
-  <qm:pageTemplate>
+  <qm:template_session>
   <div ng-controller="OfferController">    
         <div class="col-sm-4">
          <form name="form" class="css-form" novalidate>
@@ -60,6 +60,6 @@
 
   </div>
 </div>
-</qm:pageTemplate>
+</qm:template_session>
 
 

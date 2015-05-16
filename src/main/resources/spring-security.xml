@@ -14,6 +14,8 @@
     <security:intercept-url pattern="/user/registration" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/user/save" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/howitworks" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/worker_signup" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/img/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />

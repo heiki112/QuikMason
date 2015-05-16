@@ -1,5 +1,5 @@
 <%@ include file="init.jsp"%>
-<qm:pageTemplate>
+<qm:template_session>
 
   <qm:header>
     <h1>My page</h1>
@@ -7,6 +7,6 @@
 
   #TODO
 
-</qm:pageTemplate>
+</qm:template_session>
 
 

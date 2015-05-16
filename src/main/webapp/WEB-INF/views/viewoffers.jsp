@@ -1,7 +1,7 @@
 <%@ include file="init.jsp"%>
 <html ng-app="app">
 
-<qm:pageTemplate>
+<qm:template_session>
 
 <body style="padding-left:5%">
   <qm:header>
@@ -40,4 +40,4 @@
       </div>
     </div>
     
-    </qm:pageTemplate>
+    </qm:template_session>

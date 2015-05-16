@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>QuikMason</title>
+    <title>QuikTract</title>
 
     <c:url var="baseUrl" value="" />
 

@@ -1,6 +1,6 @@
 <%@ include file="init.jsp"%>
 
-<qm:pageTemplate>
+<qm:template_session>
 
   <qm:header>
     <h1>Main</h1>
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-</qm:pageTemplate>
+</qm:template_session>
 
 
 
