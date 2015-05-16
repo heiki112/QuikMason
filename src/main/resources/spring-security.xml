@@ -10,6 +10,7 @@
   <!-- Security -->
   <security:http>
     <security:intercept-url pattern="/landing" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    <security:intercept-url pattern="/" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/user/registration" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/user/save" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
@@ -18,7 +19,7 @@
     <security:intercept-url pattern="/img/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/font/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
     <security:intercept-url pattern="/**" access="ROLE_USER" />
-    <security:form-login login-page="/landing" default-target-url="/main" authentication-failure-url="/login?error=1"
+    <security:form-login login-page="/login" default-target-url="/main" authentication-failure-url="/login?error=1"
       always-use-default-target="true" />
     <security:logout logout-url="/logout" logout-success-url="/login" />
   </security:http>
